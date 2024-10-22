@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+                 
+
+
+
+
+
+
+
+                 <html lang="fr">
+
+<head> 
+
+
+    <meta charset="UTF-8"> 
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>Le panier solidaire</title>
+
+
+
+                 
+
+
+
+                  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap"> 
+
+
+
+
+</head>
+ 
+
+
+
+
+
+
+
+<body>
+
+ 
+
+
+              
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <header class="banner" style="background-color: #4FB0AE; color: white;">
+        <div class="container">
+            <h1>Découvrez notre concept</h1>
+            <h2>Une solution solidaire pour subvenir aux besoins de tous</h2>
+            <a href="#apply-section" class="btn-blue" style="background-color: #FF6347; color: white;">Commencer maintenant</a> 
+
+
+
+
+
+        </div>
+    </header>
+
+
+
+
+
+    <main class="container">
+        <h2 style="color: #333;">Notre projet</h2> <!-- Couleur modifiée -->
+        <div class="cards"> 
+
+
+
+            <div class="card">
+                <img src="images/membres.jpg">
+                <h3 style="color: #4FB0AE;">Notre équipe</h3> 
+
+
+
+             
+
+
+
+                                                      </div>
+            <div class="card">
+                <img src="images/aide.jpg" alt="Nos clients">
+                <h3 style="color: #4FB0AE;">Nos donations</h3>
+
+
+
+
+            </div>
+            <div class="card">
+                <img src="images/collecte.jpg">
+                <h3 style="color: #4FB0AE;">Nos récoltes</h3> 
+                             </div>
+        </div>
+                                          </main>
+
+    <section id="apply-section" class="multi-question-section">
+        <div class="container" style="max-width: 640px; margin: 0 auto; padding: 20px; background: #F9F9F9; border: 1px solid #ccc; border-radius: 8px;">
+                                      <h2 style="color: #333;">Nous avons quelques questions pour vous !</h2>
+            <form id="question-form">
+                <div id="question-container">
+                    <div class="question" data-question="1" style="display: block;">
+                        <label for="question1">Quel est votre adresse email ?</label>
+                        <input type="text" id="question1"         name="name" required placeholder="Entrez votre nom">
+                             <button type="button" class="next-button" style="background-color: #4FB0AE; color: white;">Suivant</button>
+                    </div>
+                    <div class="question" data-question="2" style="display: none;">
+                        <label for="question2">Êtes-vous intéressé à donner ou à recevoir de la nourriture ?</label>
+                        <input type="email" id="question2" name="email" required placeholder="Entrez votre email">
+                        <button type="button" class="next-button" style="background-color: #4FB0AE; color: white;">Suivant</button>
+                    </div>
+                    <div class="question" data-question="3" style="display: none;">
+                        <label for="question3">Quel est votre numéro de téléphone ?</label>
+                        <input type="tel" id="question3" name="phone" required placeholder="+1 (201) 555-0123">
+                        <button type="submit" style="background-color: #FF6347; color: white;">Soumettre</button>
+                    </div>
+
+
+
+
+
+
+                    <div class="question" data-question="2" style="display: none;">
+                        <label for="question2">Quelle est votre ville ?</label>
+                      
+
+
+                        <input type="email" id="question2" name="email" required placeholder="Entrez votre email">
+                        <button type="button" class="next-button" style="background-color: #4FB0AE; color: white;">Suivant</button>
+                    </div>
+                </div>
+            </form>
+            <p>
+                Powered by <a href="https://www.example.com" style="color: #4FB0AE; text-decoration: none;" target="_blank" rel="noopener noreferrer">Example</a> 
+            </p>
+        </div>
+    </section>
+
+    <script>
+        const nextButtons = document.querySelectorAll('.next-button');
+        const questions = document.querySelectorAll('.question');
+        let currentQuestion = 0;
+
+        nextButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                questions[currentQuestion].style.display = 'none'; 
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    questions[currentQuestion].style.display = 'block'; 
+                }
+            });
+        });
+
+        document.getElementById('question-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            const name = this.name.value;
+            const email = this.email.value;
+            const phoneNumber = this.phone.value;
+            
+
+
+            console.log('Nom:', name);
+            console.log('Email:', email);
+            console.log('Numéro de téléphone:', phoneNumber);
+            alert('Merci pour vos réponses !');
+        });
+    </script>
+
+</body>
+
+</html>
